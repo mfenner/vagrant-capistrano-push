@@ -1,0 +1,3 @@
+Vagrant::Spec::Acceptance.configure do |c|
+  # ...
+end
