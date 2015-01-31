@@ -3,15 +3,16 @@ module VagrantPlugins
     class Config < Vagrant.plugin("2", :config)
       # The capistrano command (as a string) to execute.
       # @return [String]
-      attr_accessor :stage, :command
+      attr_accessor :stage
+      attr_accessor :inline
 
       def initialize
         @stage = UNSET_VALUE
-        @command = "bundle exec cap #{@stage} deploy"
       end
 
       def finalize!
         @stage = nil if @stage == UNSET_VALUE
+        @inline = "bundle exec cap #{@stage} deploy"
       end
 
       def validate(machine)

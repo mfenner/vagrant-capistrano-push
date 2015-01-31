@@ -6,12 +6,12 @@ module VagrantPlugins
   module CapistranoPush
     class Push < Vagrant.plugin("2", :push)
       def push
-        execute!(config.command)
-      end
-
-      # Execute the capistrano command, raising an exception if it fails.
-      def execute!(*cmd)
-        result = Vagrant::Util::Subprocess.execute(*cmd)
+        result = Vagrant::Util::Subprocess.execute(
+          'bash',
+          '-c',
+          config.inline,
+          :notify => [:stdout, :stderr]
+        )
 
         if result.exit_code != 0
           raise Errors::CommandFailed,
