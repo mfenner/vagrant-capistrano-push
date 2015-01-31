@@ -3,3 +3,5 @@ en:
     errors:
       missing_attribute: |-
         The attribute %{attribute} was missing.
+      command_failed: |-
+        The command %{cmd} failed with error %{stderr}.

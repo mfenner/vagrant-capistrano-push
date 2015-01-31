@@ -15,7 +15,7 @@ module VagrantPlugins
 
         if result.exit_code != 0
           raise Errors::CommandFailed,
-            inline: config.inline,
+            cmd: config.inline,
             stdout: result.stdout,
             stderr: result.stderr
         end
