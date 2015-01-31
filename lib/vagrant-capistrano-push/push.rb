@@ -17,6 +17,7 @@ module VagrantPlugins
         if result.exit_code != 0
           raise Errors::CommandFailed,
             cmd: config.inline,
+            workdir: @env.root_path.to_s,
             stdout: result.stdout,
             stderr: result.stderr
         end

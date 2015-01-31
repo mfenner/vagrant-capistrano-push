@@ -1,6 +1,6 @@
 # Vagrant Capistrano Push
 
-TODO: Write a gem description
+Deploy or "push" application code in the same directory as your Vagrantfile to a remote server using [capistrano](http://capistranorb.com/).
 
 ## Installation
 
@@ -10,7 +10,37 @@ vagrant plugin install vagrant-capistrano-push
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+# Vagrantfile
+config.push.define "staging", strategy: "capistrano" do |push|
+  push.stage = "staging"
+end
+
+config.push.define "production", strategy: "capistrano" do |push|
+  push.stage = "production"
+end
+```
+
+And then
+
+```
+vagrant push production
+```
+
+Or if you are using ENV variables:
+
+```
+# Vagrantfile
+config.push.define "capistrano" do |push|
+  push.stage = ENV["STAGE"]
+end
+```
+
+And then
+
+```
+vagrant push
+```
 
 ## Contributing
 
