@@ -24,7 +24,7 @@ module VagrantPlugins
 
       def self.init!
         return if defined?(@_init)
-        I18n.load_path << File.expand_path("../locales/en.yml", __FILE__)
+        I18n.load_path << File.expand_path("locales/en.yml", CapistranoPush.source_root)
         I18n.reload!
         @_init = true
       end
