@@ -4,7 +4,7 @@ require "vagrant-capistrano-push/errors"
 describe VagrantPlugins::CapistranoPush::Config do
   let(:config) { described_class.new }
 
-  # Ensure tests are not affected by AWS credential environment variables
+  # Ensure tests are not affected by environment variables
   before :each do
     ENV.stub(:[] => nil)
   end
