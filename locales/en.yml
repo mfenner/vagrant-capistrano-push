@@ -4,4 +4,4 @@ en:
       missing_attribute: |-
         The attribute %{attribute} was missing.
       command_failed: |-
-        The command %{cmd} in %{workdir} failed with error %{stderr}.
+        The command %{cmd} failed with error %{stderr}.

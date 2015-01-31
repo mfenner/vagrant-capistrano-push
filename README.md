@@ -10,7 +10,7 @@ vagrant plugin install vagrant-capistrano-push
 
 ## Usage
 
-```
+```ruby
 # Vagrantfile
 config.push.define "staging", strategy: "capistrano" do |push|
   push.stage = "staging"
@@ -29,7 +29,7 @@ vagrant push production
 
 Or if you are using ENV variables:
 
-```
+```ruby
 # Vagrantfile
 config.push.define "capistrano" do |push|
   push.stage = ENV["STAGE"]
