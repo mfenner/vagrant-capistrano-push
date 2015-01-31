@@ -9,7 +9,7 @@ module VagrantPlugins
         # Capistrano is not part of the current Vagrant bundle, so it needs to run
         # in the context of the system.
         Vagrant::Util::Env.with_clean_env do
-          result = Vagrant::Util::Subprocess.execute(
+          result = Vagrant::Util::SafeExec.exec(
             'bash',
             '-c',
             config.inline,
