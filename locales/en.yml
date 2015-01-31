@@ -1,0 +1,5 @@
+en:
+  capistrano_push:
+    errors:
+      missing_attribute: |-
+        The attribute %{attribute} was missing.
