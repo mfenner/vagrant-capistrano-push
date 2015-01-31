@@ -10,7 +10,7 @@ module VagrantPlugins
           'bash',
           '-c',
           config.inline,
-          :workdir => @machine.env.root_path.to_s,
+          :workdir => machine.env.root_path.to_s,
           :notify => [:stdout, :stderr]
         )
 
